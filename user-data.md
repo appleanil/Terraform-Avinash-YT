@@ -1,3 +1,10 @@
+```
+#!/bin/bash
+sudo yum install httpd -y
+sudo systemctl enable httpd --now
+echo '<h1> Deployed via Terraform </h1>' | sudo tee /var/www/html/index.html
+```
+```
 provider "aws" {
   region = "ap-south-1"
 }
@@ -13,3 +20,4 @@ resource "aws_instance" "new" {
     Name = "webserver-with-userdata"
   }
 }
+```
