@@ -484,6 +484,14 @@ resource "aws_instance" "web" {
     Name = "webserver"
   }
 }
+data "aws_vpc" "default" {
+  default = true
+}
+
+data "aws_security_group" "default" {
+  name   = "default"
+  vpc_id = data.aws_vpc.default.id
+}
 ```
 
 Update the PEM file path, AMI, security group, and key pair to match your environment. Ensure SSH access is allowed from your IP.
