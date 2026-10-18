@@ -460,7 +460,8 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami                    = "ami-02d05f76acbed4e3e"
   instance_type          = "t3.micro"
-  vpc_security_group_ids = ["sg-0e244adb6f393f9b9"]
+  #vpc_security_group_ids = ["sg-0e244adb6f393f9b9"]
+  vpc_security_group_ids = [data.aws_security_group.default.id]
   key_name               = "awar06-lnx"
 
   connection {
