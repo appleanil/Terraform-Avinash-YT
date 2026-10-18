@@ -303,6 +303,7 @@ resource "aws_instance" "list_example" {
   }
 }
 ```
+## 15. List Variable for IAM Users
 ```
 provider "aws" {
   region = "ap-south-1"
