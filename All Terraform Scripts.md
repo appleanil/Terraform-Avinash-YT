@@ -281,7 +281,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-## 15. List Variable
+## 15. List Variable for ec2 instances
 
 ```hcl
 provider "aws" {
@@ -300,6 +300,26 @@ resource "aws_instance" "list_example" {
   tags = {
     Name        = "My-tf-instance"
     environment = "dev"
+  }
+}
+```
+```
+provider "aws" {
+  region = "ap-south-1"
+}
+
+variable "user_names" {
+  type    = list(string)
+  default = ["Anil", "Kumar", "Pranith", "Kesava"]
+}
+
+resource "aws_iam_user" "dev" {
+  count = length(var.user_names)
+
+  name = var.user_names[count.index]
+
+  tags = {
+    Name = var.user_names[count.index]
   }
 }
 ```
