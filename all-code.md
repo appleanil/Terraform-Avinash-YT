@@ -351,6 +351,7 @@ resource "aws_security_group" "manual_create" {
   }
 }
 ```
+# Run these commands
 ```
 terraform init
 terraform fmt
@@ -392,6 +393,7 @@ resource "aws_security_group" "dynamic_example" {
   }
 }
 ```
+# Run these commands
 ```
 terraform init
 terraform fmt
