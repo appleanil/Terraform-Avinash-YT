@@ -351,6 +351,13 @@ resource "aws_security_group" "manual_create" {
   }
 }
 ```
+```
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
 
 ## 17. With Dynamic Block
 
@@ -384,6 +391,13 @@ resource "aws_security_group" "dynamic_example" {
     }
   }
 }
+```
+```
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
 ```
 
 # Terraform Data Block
